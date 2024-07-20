@@ -43,3 +43,17 @@ This project is designed to help understand and implement fundamental data struc
 - **QuickSort and BinarySearch**
   - Sort an array using QuickSort
   - Search for a value in a sorted array using BinarySearch
+
+## Getting Started
+
+### Prerequisites
+- Java Development Kit (JDK) 8 or higher
+- IDE or text editor
+- Basic understanding of Java programming
+
+### Installation
+Clone the repository and compile the code:
+```bash
+git clone https://github.com/your-username/data-structures-algorithms-java.git
+cd data-structures-algorithms-java
+javac *.java
