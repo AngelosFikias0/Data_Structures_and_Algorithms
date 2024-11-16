@@ -8,13 +8,13 @@ public class Main {
 
         // Prompt the user to choose between different options
         while (true) {
-            System.out.println("What would you like to try? :\n1) Linked List \n2) Stack \n3) Queue \n4) BST \n5) Heap \n6) Hashtable \n7) QuickSort and BinarySearch");
+            System.out.println("What would you like to try? :\n1) Linked List \n2) Stack \n3) Queue \n4) BST \n5) Heap \n6) Hashtable \n7) QuickSort and BinarySearch \n8) Graph Traversal \n9) Sliding Window \n10) Quit");
 
             try {
                 choice = scanner.nextInt();
 
-                if (choice < 1 || choice > 7) {
-                    System.out.println("Please enter a valid choice (1, 2, 3, 4, 5, 6, or 7):");
+                if (choice < 1 || choice > 10) {
+                    System.out.println("Please enter a valid choice (1, 2, 3, 4, 5, 6, 7, 8, or 9):");
                 } else {
                     break; // Exit loop if input is valid
                 }
@@ -173,6 +173,48 @@ public class Main {
                 // QuickSort and BinarySearch functionality
                 quickSortAndBinarySearch(scanner);
                 break;
+
+            case 8:
+                // Graph Traversal functionality
+                GraphTraversal graph = new GraphTraversal();
+
+                // Create the graph
+                graph.addEdge(1, 2);
+                graph.addEdge(1, 3);
+                graph.addEdge(2, 4);
+                graph.addEdge(3, 5);
+                graph.addEdge(4, 6);
+                graph.addEdge(5, 6);
+                graph.addEdge(5, 7);
+
+                // Perform DFS and BFS
+                graph.printGraph();
+                System.out.println("Depth First Search (DFS):");
+                graph.dfs(1); 
+                System.out.println("\nBreadth First Search (BFS):");
+                graph.bfs(1); 
+                break;
+
+            case 9:
+                // Sliding Window functionality
+                SlidingWindow slidingWindow = new SlidingWindow();
+                int[] arr = {1, 3, 5, 2, 8, 1, 5};
+                int k = 3;
+
+                System.out.println("Elements: ");
+                for(int i=0;i<arr.length;i++) {
+                	System.out.print(arr[i]+" ");
+                }
+                System.out.println("\n");
+                
+                // Calculate maximum sum of k consecutive elements
+                int maxSum = slidingWindow.maxSum(arr, k);
+                System.out.println("Maximum sum of " + k + " consecutive elements: " + maxSum); // Expected: 15
+                break;
+                
+            case 10:
+            	System.out.println("Goodbye :)");
+            	break;
         }
     }
 
@@ -219,26 +261,15 @@ public class Main {
         }
         System.out.println();
 
-        // Prompt the user to input a value to search in the array
-        System.out.println("Enter the value to search:");
-        double target = 0;
-        while (true) {
-            try {
-                target = scanner.nextDouble();
-                break;
-            } catch (InputMismatchException e) {
-                System.out.println("Please enter a valid number.");
-                scanner.next(); // Clear invalid input
-            }
-        }
-
-        // Searching the value using BinarySearch
+        // Prompt the user to input the value to search for using BinarySearch
+        System.out.println("Enter the value to search for using BinarySearch:");
+        double target = scanner.nextDouble();
         BinarySearch binarySearch = new BinarySearch();
-        int result = binarySearch.search(array, target, 0, array.length - 1);
-        if (result != -1) {
-            System.out.println("Value found at index: " + result);
+        int index = binarySearch.search(array, target, 0, array.length - 1);
+        if (index == -1) {
+            System.out.println("Element not found.");
         } else {
-            System.out.println("Value not found in the array.");
+            System.out.println("Element found at index: " + index);
         }
     }
 }

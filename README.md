@@ -1,6 +1,6 @@
 # Data Structures and Algorithms in Java
 
-This project is a comprehensive collection of data structures and algorithms implemented in Java. It includes detailed implementations and example usage for Linked Lists, Stacks, Queues, Binary Search Trees (BST), Heaps, Hashtables, QuickSort, and Binary Search.
+This project is a comprehensive collection of data structures and algorithms implemented in Java. It includes detailed implementations and example usage for Linked Lists, Stacks, Queues, Binary Search Trees (BST), Heaps, Hashtables, QuickSort, Binary Search, DFS, BFS and sliding window.
 
 ## Introduction
 
@@ -43,6 +43,12 @@ This project is designed to help understand and implement fundamental data struc
 - **QuickSort and BinarySearch**
   - Sort an array using QuickSort
   - Search for a value in a sorted array using BinarySearch
+
+- **Depth first search and Breadth first search**
+  - Perform DFS and BFS on a graph
+
+- **Sliding window algorithm**
+  - Find the maximum sum of k consecutive elements in an array
 
 ## Getting Started
 
